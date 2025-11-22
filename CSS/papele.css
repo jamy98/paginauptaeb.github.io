@@ -1,0 +1,378 @@
+:root {
+    --marron: #5D4037; 
+    --amarillo: #FFD54A; 
+    --color-fondo-claro: #fde3cf;
+    --color-texto-oscuro: #32160e;
+    --color-texto-claro: #6e3c10;
+    --color-fondo-comun: #efb469;
+    --color-glass: #d4d4ca79; 
+}
+
+/* Sección principal */
+.flex-apilado {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 80px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Contenedores principales */
+.contenedor {
+    border: 5px groove var(--amarillo);
+    background-color: #ecad7c;
+    color: #46220f;
+    font-family: "Georgia", serif;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1400px; /* Aumentado para pantallas grandes */
+    min-height: 250px; /* Aumentado para pantallas grandes */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    padding: 2rem; /* Aumentado para pantallas grandes */
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* Aumentado para pantallas grandes */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Sub-contenedores de imágenes - TAMAÑOS GRANDES PARA DESKTOP */
+.sub-contenedor {
+    padding: 0;
+    height: 250px; /* Grande para desktop */
+    width: 250px;  /* Grande para desktop */
+    margin: 1rem 0;
+    border-radius: 8px;
+    border: 6px double var(--amarillo);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.sub-contenedor:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.sub-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de texto */
+.contenedor h3,
+.contenedor h4 {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1.3rem; /* Texto más grande para desktop */
+}
+
+.contenedor ul {
+    margin: 0;
+    padding-left: 2rem; /* Más espacio para desktop */
+}
+
+.contenedor li {
+    margin-bottom: 0.8rem; /* Más espacio entre líneas */
+    line-height: 1.5;
+    font-size: 1.1rem; /* Texto más grande */
+}
+
+/* Estilos específicos para cada contenedor */
+.contenedor:nth-child(1) {
+    background: linear-gradient(135deg, #ecad7c, #f8c8a0);
+}
+
+.contenedor:nth-child(2) {
+    background: linear-gradient(135deg, #f8c8a0, #ecad7c);
+    flex-wrap: wrap;
+}
+
+.contenedor:nth-child(3) {
+    background: linear-gradient(135deg, #ecad7c, #f8c8a0);
+    justify-content: space-around;
+}
+
+.contenedor:nth-child(4) {
+    background: linear-gradient(135deg, #f8c8a0, #ecad7c);
+}
+
+/* ============================================= */
+/* MEDIA QUERIES - EMPEZANDO DESDE PANTALLAS GRANDES */
+/* ============================================= */
+
+/* Pantallas muy grandes (más de 1400px) */
+@media (min-width: 1400px) {
+    .contenedor {
+        max-width: 1600px;
+        padding: 2.5rem;
+        gap: 2.5rem;
+        min-height: 300px;
+    }
+    
+    .sub-contenedor {
+        height: 280px;
+        width: 280px;
+    }
+    
+    .contenedor h3,
+    .contenedor h4 {
+        font-size: 1.4rem;
+    }
+    
+    .contenedor li {
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop estándar (1200px - 1399px) */
+@media (min-width: 1200px) {
+    .contenedor {
+        max-width: 1400px;
+        padding: 2rem;
+        gap: 2rem;
+        min-height: 280px;
+    }
+    
+    .sub-contenedor {
+        height: 250px;
+        width: 250px;
+    }
+    
+    .contenedor h3,
+    .contenedor h4 {
+        font-size: 1.3rem;
+    }
+    
+    .contenedor li {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop pequeño (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .contenedor {
+        max-width: 1200px;
+        padding: 1.8rem;
+        gap: 1.8rem;
+        min-height: 250px;
+    }
+    
+    .sub-contenedor {
+        height: 220px;
+        width: 220px;
+    }
+    
+    .contenedor h3,
+    .contenedor h4 {
+        font-size: 1.2rem;
+    }
+    
+    .contenedor li {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet grande (992px - 1023px) */
+@media (max-width: 1023px) and (min-width: 992px) {
+    .contenedor {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .sub-contenedor {
+        height: 180px;
+        width: 180px;
+    }
+    
+    .contenedor h3,
+    .contenedor h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1.2rem;
+        width: 95%;
+    }
+    
+    .sub-contenedor {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .contenedor h3,
+    .contenedor h4 {
+        font-size: 1.1rem;
+    }
+    
+    .contenedor ul {
+        padding-left: 1.5rem;
+    }
+    
+    .contenedor li {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Tablet pequeña (768px) */
+@media (max-width: 768px) {
+    .flex-apilado {
+        margin-top: 70px;
+        padding: 1rem 0.5rem;
+        gap: 1.5rem;
+    }
+    
+    .contenedor {
+        width: 95%;
+        padding: 1rem;
+        font-size: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sub-contenedor {
+        height: 120px;
+        width: 120px;
+    }
+    
+    .contenedor h3,
+    .contenedor h4 {
+        font-size: 1rem;
+    }
+    
+    .contenedor ul {
+        padding-left: 1rem;
+    }
+    
+    .contenedor li {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    /* Orden específico para móviles */
+    .contenedor:nth-child(2) {
+        flex-direction: column;
+    }
+    
+    .contenedor:nth-child(2) h4 {
+        order: -1;
+        width: 100%;
+    }
+    
+    .contenedor:nth-child(2) .sub-contenedor {
+        order: -2;
+    }
+}
+
+/* Móvil (480px - 767px) */
+@media (max-width: 480px) {
+    .flex-apilado {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+    
+    .contenedor {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sub-contenedor {
+        height: 100px;
+        width: 100px;
+        margin: 0.3rem;
+    }
+    
+    .contenedor h3,
+    .contenedor h4 {
+        font-size: 0.9rem;
+    }
+    
+    .contenedor li {
+        font-size: 0.8rem;
+    }
+    
+    /* Ajustes específicos para el contenedor de imágenes múltiples */
+    .contenedor:nth-child(3) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .contenedor:nth-child(3) .sub-contenedor {
+        flex: 0 0 calc(33.333% - 0.5rem);
+        max-width: 100px;
+        height: 90px;
+    }
+}
+
+/* Móvil muy pequeño (menos de 360px) */
+@media (max-width: 359px) {
+    .sub-contenedor {
+        height: 80px;
+        width: 80px;
+    }
+    
+    .contenedor:nth-child(3) .sub-contenedor {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: 80px;
+        height: 70px;
+    }
+}
+
+/* Mejoras de accesibilidad */
+.contenedor:focus-within {
+    outline: 2px solid var(--amarillo);
+    outline-offset: 2px;
+}
+
+.sub-contenedor img {
+    transition: transform 0.3s ease;
+}
+
+.sub-contenedor:hover img {
+    transform: scale(1.1);
+}
+
+/* Efectos adicionales para pantallas grandes */
+@media (min-width: 1024px) {
+    .sub-contenedor {
+        transition: all 0.3s ease;
+    }
+    
+    .sub-contenedor:hover {
+        transform: translateY(-8px) scale(1.08);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+    
+    .contenedor:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+}
+
+

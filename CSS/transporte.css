@@ -1,0 +1,271 @@
+ /* ===== ESTILOS PARA PÁGINA DE TRANSPORTE - ESTRUCTURADA ===== */
+
+/* Main container */
+.transport-main {
+    margin-top: 80px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.transport-hero {
+    background: linear-gradient(135deg, var(--orange-color), var(--yellow-color));
+    padding: 3rem 0;
+}
+
+.transport-hero h1 {
+    color: var(--brown-color);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hero-text {
+    color: white;
+    flex: 1;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    color: var(--brown-color);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    background: white;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.hero-image {
+    flex: 0 0 300px;
+}
+
+.van-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Main Services Grid */
+.main-services {
+    padding: 4rem 0;
+    background: var(--white-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--white-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--cream-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.service-main-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-content.full-text {
+    padding: 2rem;
+    
+    text-align: center;
+}
+
+.service-content h2 {
+    color: var(--brown-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.service-content p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.service-content a {
+    color: var(--orange-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.service-content a:hover {
+    text-decoration: underline;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 2rem 0;
+    background: var(--cream-color);
+}
+
+.cta-banner {
+    background: var(--brown-color);
+    color: var(--white-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Features Section */
+.features-section {
+    padding: 4rem 0;
+    background: var(--white-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+}
+
+.feature-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--yellow-color);
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-content h3 {
+    color: var(--brown-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature-content p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .transport-hero {
+        padding: 2rem 0;
+        margin-top: 70px;
+    }
+    
+    .transport-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .services-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .highlight {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .transport-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .service-card,
+    .feature-card {
+        padding: 1.5rem;
+    }
+}

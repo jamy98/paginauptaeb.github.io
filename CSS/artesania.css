@@ -1,0 +1,455 @@
+/*
+|--------------------------------------------------
+| 1. VARIABLES CSS (CUSTOM PROPERTIES)
+|--------------------------------------------------
+*/
+:root {
+    --color-principal: #5D4037; /* Marrón oscuro para el logo y acentos */
+    --color-acento: #FFD54A; /* Amarillo/Dorado para acentos */
+    --color-fondo-claro: #f0c9ab;
+    --color-texto-oscuro: #32160e;
+    --color-texto-claro: #6e3c10;
+    --color-fondo-comun: #efb469;
+    --color-glass: #d4d4ca79; /* Transparencia para efectos visuales */
+
+    /* Fuentes y tamaños */
+    --font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+}
+
+/*
+|--------------------------------------------------
+| 2. ESTILOS BASE Y UTILITIES
+|--------------------------------------------------
+*/
+
+
+a {
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-acento);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-texto-oscuro);
+    margin-top: 0;
+}
+
+.small {
+    font-size: 0.85em;
+    color: var(--color-texto-claro);
+}
+
+/*
+| 3. ESTILOS DEL BANNER (HEADER - .nav)
+*/
+
+
+/* Estilos del Toggle (Hamburger - Simplificado para dispositivos móviles) */
+.menu-toggle {
+    display: none; /* Ocultar en escritorio */
+}
+.texto {
+    margin: 15px;
+    padding: var(--space-md);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--color-fondo-comun);
+    border-radius: 5%;
+}
+
+/*
+4. ESTILOS DEL CUERPO (FLEXBOX) - RESPONSIVE
+*/
+
+/* Variables para responsive */
+:root {
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    
+    /* Breakpoints */
+    --bp-mobile: 480px;
+    --bp-tablet: 768px;
+    --bp-desktop: 1024px;
+    --bp-large: 1200px;
+}
+
+/* Contenedor principal en columna */
+.flex-container1 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    background-color: var(--color-fondo-claro); 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.prueba {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    padding: var(--space-md);
+    background-color: var(--color-fondo-claro); 
+    justify-content: center;
+    align-items: stretch; /* Cambiado para mejor alineación */
+    margin: var(--space-md) auto;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1400px;
+}   
+
+/* Estilo base para cada contenedor principal */
+.main-content-box {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-fondo-comun);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-fondo-comun);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--color-glass);
+    width: 100%;
+    max-width: 100%;
+}
+
+.bloque {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    min-height: 520px;
+    min-width: 300px; /* Reducido para mejor responsive */
+    max-width: 500px; /* Agregado máximo */
+    background-color: var(--color-fondo-comun);
+    color: var(--color-principal);
+    border: solid 2px rgb(107, 41, 41);
+    border-radius: 8px;
+    align-content: center;
+    flex: 1 1 300px; /* Flex basis para responsive */
+    padding: var(--space-md);
+    margin: var(--space-sm);
+}
+
+/* Estilo específico para el primer contenedor que debe tener elementos en fila */
+.top-flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* Mejor para items de diferente altura */
+    width: 100%;
+}
+
+.flex-row-item img {
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    object-fit: cover; /* Cambiado a cover para mejor aspecto */
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.flex-row-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo para los dos sub-contenedores internos */
+.flex-row-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    padding: var(--space-md);
+    border: 1px solid var(--color-texto-oscuro);
+    background-color: var(--color-fondo-comun);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================================= */
+/* MEDIA QUERIES RESPONSIVE */
+/* ============================================= */
+
+/* Pantallas grandes (desktop) */
+@media (min-width: 1200px) {
+    .prueba {
+        gap: var(--space-xl);
+        padding: var(--space-lg);
+    }
+    
+    .bloque {
+        flex: 1 1 350px;
+        min-height: 550px;
+    }
+    
+    .flex-row-item {
+        min-width: 350px;
+        padding: var(--space-lg);
+    }
+}
+
+/* Desktop estándar */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .prueba {
+        gap: var(--space-lg);
+    }
+    
+    .bloque {
+        flex: 1 1 320px;
+        min-height: 500px;
+    }
+    
+    .flex-row-item {
+        min-width: 300px;
+    }
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .flex-container1 {
+        padding: var(--space-md);
+        gap: var(--space-md);
+    }
+    
+    .prueba {
+        gap: var(--space-md);
+        margin: var(--space-sm) auto;
+    }
+    
+    .bloque {
+        flex: 1 1 calc(50% - var(--space-md));
+        min-width: 280px;
+        min-height: 480px;
+    }
+    
+    .top-flex-row {
+        gap: var(--space-sm);
+    }
+    
+    .flex-row-item {
+        min-width: 250px;
+        padding: var(--space-sm);
+    }
+    
+    .main-content-box {
+        padding: var(--space-md);
+    }
+}
+
+/* Tablet portrait */
+@media (min-width: 481px) and (max-width: 767px) {
+    .flex-container1 {
+        padding: var(--space-sm);
+        gap: var(--space-md);
+    }
+    
+    .prueba {
+        gap: var(--space-sm);
+        margin: var(--space-xs) auto;
+        flex-direction: column;
+    }
+    
+    .bloque {
+        flex: 1 1 100%;
+        min-width: 100%;
+        min-height: auto;
+        max-width: 100%;
+        margin: var(--space-xs) 0;
+        padding: var(--space-sm);
+    }
+    
+    .top-flex-row {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .flex-row-item {
+        min-width: 100%;
+        max-width: 100%;
+        padding: var(--space-sm);
+    }
+    
+    .main-content-box {
+        padding: var(--space-sm);
+    }
+    
+    .flex-row-item img {
+        max-height: 250px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .flex-container1 {
+        padding: var(--space-xs);
+        gap: var(--space-sm);
+    }
+    
+    .prueba {
+        gap: var(--space-xs);
+        margin: var(--space-xs) auto;
+        padding: var(--space-xs);
+        flex-direction: column;
+    }
+    
+    .bloque {
+        flex: 1 1 100%;
+        min-width: 100%;
+        min-height: auto;
+        max-width: 100%;
+        margin: var(--space-xs) 0;
+        padding: var(--space-sm);
+        min-width: unset;
+    }
+    
+    .top-flex-row {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+    
+    .flex-row-item {
+        min-width: 100%;
+        max-width: 100%;
+        padding: var(--space-sm);
+        min-width: unset;
+    }
+    
+    .main-content-box {
+        padding: var(--space-sm);
+        border-radius: 8px;
+    }
+    
+    .flex-row-item img {
+        max-height: 200px;
+    }
+    
+    /* Ajustes específicos para móviles muy pequeños */
+    .bloque {
+        min-height: 400px;
+    }
+}
+
+/* Móviles muy pequeños (menos de 360px) */
+@media (max-width: 359px) {
+    .flex-container1 {
+        padding: 0.25rem;
+    }
+    
+    .prueba {
+        margin: 0.25rem auto;
+        gap: 0.5rem;
+    }
+    
+    .bloque {
+        padding: 0.75rem;
+        min-height: 350px;
+    }
+    
+    .flex-row-item {
+        padding: 0.75rem;
+    }
+    
+    .flex-row-item img {
+        max-height: 180px;
+    }
+}
+
+/* ============================================= */
+/* MEJORAS DE ACCESIBILIDAD Y USABILIDAD */
+/* ============================================= */
+
+/* Mejora de focus para accesibilidad */
+.flex-row-item:focus,
+.bloque:focus {
+    outline: 2px solid var(--amarillo);
+    outline-offset: 2px;
+}
+
+/* Transiciones suaves para todos los elementos interactivos */
+.bloque,
+.flex-row-item,
+.main-content-box {
+    transition: all 0.3s ease;
+}
+
+/* Efectos hover mejorados para desktop */
+@media (hover: hover) and (pointer: fine) {
+    .bloque:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px var(--color-glass);
+    }
+    
+    .flex-row-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px var(--color-glass);
+    }
+}
+
+/* Loading states */
+.bloque.loading,
+.flex-row-item.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Estados activos */
+.bloque:active,
+.flex-row-item:active {
+    transform: translateY(1px);
+}
+
+/* ============================================= */
+/* UTILIDADES RESPONSIVE ADICIONALES */
+/* ============================================= */
+
+/* Ocultar/mostrar elementos según breakpoint */
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+}
+
+/* Texto responsive */
+.responsive-text {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    line-height: 1.4;
+}
+
+/* Contenedor fluid para imágenes */
+.image-fluid {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
